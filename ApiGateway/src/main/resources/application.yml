@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web: DEBUG
+    reactor.netty: DEBUG
+    org.springframework.http.codec: DEBUG
+
+api-gateway:
+  services:
+    order:
+      base-url: http://order-service:8081/
+    account:
+      base-url: http://payment-service:8082/
